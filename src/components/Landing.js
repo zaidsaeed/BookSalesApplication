@@ -8,7 +8,9 @@ const Landing = () => {
     {
       bookTitle: "The Hunger Games",
       author: "Jack Hello",
-      description: "This book is awesome"
+      description: "This book is awesome",
+      imageURL:
+        "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/The_Hunger_Games_cover.jpg/220px-The_Hunger_Games_cover.jpg"
     }
   ];
 
@@ -19,6 +21,7 @@ const Landing = () => {
         bookTitle={book.bookTitle}
         author={book.author}
         description={book.description}
+        imageURL={book.imageURL}
       />
     );
   });
