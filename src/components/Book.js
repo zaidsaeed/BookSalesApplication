@@ -7,7 +7,10 @@ class Book extends Component {
     return (
       <div
         className="card text-white bg-success mb-3"
-        style={{ maxWidth: "20rem", marginTop: "20px", marginLeft: "20px" }}
+        style={{
+          maxWidth: "20rem",
+          marginTop: "20px"
+        }}
       >
         <div className="card-header">{bookTitle}</div>
         <img src={imageURL} style={{ margin: "10px" }} />
