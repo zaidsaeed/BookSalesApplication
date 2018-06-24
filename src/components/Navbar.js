@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import Search from "./Search";
 class Navbar extends Component {
   render() {
     return (
@@ -38,9 +38,10 @@ class Navbar extends Component {
         </div>
 
         <div className="form-inline my-2 my-lg-0" id="navbarColor01">
+          <Search />
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to="/checkout">
+              <Link to="/shoppingcart">
                 <i
                   style={{ marginRight: "10px", hover: "pointer" }}
                   className="nav-link material-icons"
