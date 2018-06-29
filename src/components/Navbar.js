@@ -5,34 +5,48 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a className="navbar-brand" href="#">
-          BookSales
-        </a>
-        <button className="navbar-toggler">
-          <span className="navbar-toggler-icon" />
-        </button>
+        <Link to="/">
+          <a
+            className="navbar-brand nav-item"
+            style={{ color: "rgba(255,255,255,0.5)" }}
+          >
+            BookSales
+          </a>
+        </Link>
 
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Home <span className="sr-only">(current)</span>
-              </a>
+              <Link to="/">
+                <a className="nav-link" href="#">
+                  Home <span className="sr-only">(current)</span>
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+              <Link to="/books">
+                <a className="nav-link">Politics</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Pricing
-              </a>
+              <Link to="/books">
+                <a className="nav-link">History</a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                About
-              </a>
+              <Link to="/books">
+                <a className="nav-link">Fiction</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/books">
+                <a className="nav-link">Health</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/books">
+                <a className="nav-link">Science</a>
+              </Link>
             </li>
           </ul>
         </div>

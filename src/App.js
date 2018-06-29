@@ -7,6 +7,7 @@ import Landing from "./components/Landing";
 import Checkout from "./components/Checkout";
 import Navbar from "./components/Navbar";
 import ShoppingCart from "./components/ShoppingCart";
+import Books from "./components/Books";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/books" component={Books} />
           </Switch>;
         </div>
       </Router>
