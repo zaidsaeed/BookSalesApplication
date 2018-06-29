@@ -2,17 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import Book from "./Book.js";
 import protos from "./ProtosArray";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   let bookcards = protos.map((book, index) => {
     return (
-      <Book
-        key={index}
-        bookTitle={book.bookTitle}
-        author={book.author}
-        description={book.description}
-        imageURL={book.imageURL}
-      />
+      <Link to={{ pathname: `/book/${index}`, state: { book } }}>
+        <Book
+          key={index}
+          bookTitle={book.bookTitle}
+          author={book.author}
+          description={book.description}
+          imageURL={book.imageURL}
+        />
+      </Link>
     );
   });
 
