@@ -14,7 +14,7 @@ export default class SuggestionCard extends Component {
           <h4 className="card-title">{book.author}</h4>
           <img
             src={book.imageURL}
-            style={{ margin: "10px", maxWidth: "200px", maxHeight: "200px" }}
+            style={{ margin: "10px", maxWidth: "150px" }}
           />
         </div>
       </div>

@@ -7,9 +7,9 @@ export default class BookPage extends Component {
     return (
       <div>
         <h1>{book.bookTitle} </h1>
-        <PurchaseSuggestions />
         <img src={book.imageURL} style={{ margin: "10px" }} />
         <p> {book.description} </p>
+        <PurchaseSuggestions />
       </div>
     );
   }

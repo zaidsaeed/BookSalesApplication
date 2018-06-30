@@ -11,7 +11,8 @@ export default class PurchaseSuggestions extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 15rem [col-start])"
+          gridTemplateColumns: "repeat(5, 15rem [col-start])",
+          margin: "auto"
         }}
       >
         {defaultPurchaseSuggestions}
