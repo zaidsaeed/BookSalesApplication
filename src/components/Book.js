@@ -13,10 +13,9 @@ class Book extends Component {
         }}
       >
         <div className="card-header">{bookTitle}</div>
-        <img src={imageURL} style={{ margin: "10px" }} />
+        <img src={imageURL} width="300" height="400" style={{ margin: "10px" }} />
         <div className="card-body">
-          <h4 className="card-title">{author}</h4>
-          <p className="card-text">{description}</p>
+          <h4 className="card-title">by {author}</h4>
         </div>
         <button
           type="button"
@@ -29,7 +28,7 @@ class Book extends Component {
     );
   }
 }
-
+// I removed the description from the card.
 Book.propTypes = {
   //passed in
   bookTitle: PropTypes.string,
