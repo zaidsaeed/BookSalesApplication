@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Suggestions extends Component {
   render() {
@@ -8,17 +9,24 @@ export default class Suggestions extends Component {
     return options.length === 0 ? (
       <div />
     ) : (
-      <div
-        class="dropdown-menu show"
-        xPlacement="bottom-start"
-        style={{
-          position: "absolute",
-          right: "5%",
-          left: "72%"
+      <Link
+        to={{
+          pathname: "/search",
+          state: { searchResults: this.props.results }
         }}
       >
-        {options}
-      </div>
+        <div
+          class="dropdown-menu show"
+          xPlacement="bottom-start"
+          style={{
+            position: "absolute",
+            right: "5%",
+            left: "72%"
+          }}
+        >
+          {options}
+        </div>
+      </Link>
     );
   }
 }

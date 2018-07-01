@@ -23,6 +23,7 @@ class App extends Component {
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/books" component={Books} />
             <Route exact path="/book/:id" component={BookPage} />
+            <Route exact path="/search" component={Books} />
           </Switch>;
         </div>
       </Router>
