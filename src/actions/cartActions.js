@@ -5,5 +5,5 @@ export function addToCart(book) {
 }
 
 export function removeFromCart(id) {
-  return { type: types.REMOVE_FROM_CART, payload: id };
+  return { type: types.REMOVE_FROM_CART, id: id };
 }
