@@ -18,22 +18,23 @@ export default class Search extends Component {
   filterBooks(keywords, book) {
     if (
       book.bookTitle.toLowerCase().indexOf(keywords.toLowerCase()) != -1 ||
-      book.author.toLowerCase().indexOf(keywords.toLowerCase()) != -1 ||
-      book.description.toLowerCase().indexOf(keywords.toLowerCase()) != -1
+      book.author.toLowerCase().indexOf(keywords.toLowerCase()) != -1
     ) {
       return book;
     }
   }
 
   getBooks = () => {
-    const filteredBooks = protos.map(book =>
-      this.filterBooks(this.state.query, book)
-    );
+    let filteredBooks;
+    if (this.state.query == "") {
+      filteredBooks = [];
+    } else {
+      filteredBooks = protos.filter(book =>
+        this.filterBooks(this.state.query, book)
+      );
+    }
     this.setState({
-      results:
-        filteredBooks.length === 0 || typeof filteredBooks[0] === "undefined"
-          ? []
-          : filteredBooks
+      results: filteredBooks
     });
   };
 
@@ -46,7 +47,7 @@ export default class Search extends Component {
           placeholder="Search based on genre, category, author.."
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
-          style={{width:"350px"}}
+          style={{ width: "350px" }}
         />
         <Suggestions results={this.state.results} />
       </form>
