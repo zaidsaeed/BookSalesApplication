@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as cartActions from "../actions/cartActions";
+import { Link } from "react-router-dom";
+
 class Book extends Component {
   render() {
-    const { bookTitle, author, description, imageURL } = this.props;
+    const { book } = this.props;
+    let inCart;
+    const { items } = this.props;
+    const filteredItems = items.filter(item => {
+      if (item.id == book.id) {
+        return true;
+      }
+    });
+    inCart = filteredItems.length != 0;
     return (
       <div
         className="card text-white bg-success mb-3"
@@ -12,22 +25,50 @@ class Book extends Component {
           marginTop: "20px"
         }}
       >
-        <div className="card-header">{bookTitle}</div>
-        <img src={imageURL} width="300" height="400" style={{ margin: "10px" }} />
-        <div className="card-body">
-          <h4 className="card-title">by {author}</h4>
-        </div>
-        <button
-          type="button"
-          class="btn btn-warning"
-          style={{ margin: "0 15px 15px 15px" }}
+        <Link
+          to={{ pathname: `/book/${book.id}`, state: { book } }}
+          className="card text-white bg-success mb-3"
+          style={{ border: "none" }}
         >
-          Add to Shopping Cart
-        </button>
+          <div className="card-header">{book.bookTitle}</div>
+          <img
+            src={book.imageURL}
+            width="300"
+            height="400"
+            style={{ margin: "10px" }}
+          />
+          <div className="card-body">
+            <h4 className="card-title">by {book.author}</h4>
+          </div>
+        </Link>
+        {inCart ? (
+          <button
+            type="button"
+            class="btn btn-warning"
+            style={{ margin: "0 15px 15px 15px" }}
+            onClick={() => {
+              this.props.cartActions.removeFromCart(book.id);
+            }}
+          >
+            Remove From Shopping Cart
+          </button>
+        ) : (
+          <button
+            type="button"
+            class="btn btn-warning"
+            style={{ margin: "0 15px 15px 15px" }}
+            onClick={() => {
+              this.props.cartActions.addToCart(book);
+            }}
+          >
+            Add to Shopping Cart
+          </button>
+        )}
       </div>
     );
   }
 }
+
 // I removed the description from the card.
 Book.propTypes = {
   //passed in
@@ -37,4 +78,19 @@ Book.propTypes = {
   imageURL: PropTypes.string
 };
 
-export default Book;
+function mapStateToProps(state, props) {
+  return {
+    items: state.items
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    cartActions: bindActionCreators(cartActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Book);
