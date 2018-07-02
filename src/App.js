@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import ShoppingCart from "./components/ShoppingCart";
 import Books from "./components/Books";
 import BookPage from "./components/BookPage";
+import GenreBooks from "./components/GenreBooks";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/books" component={Books} />
             <Route exact path="/book/:id" component={BookPage} />
             <Route exact path="/search" component={Books} />
+            <Route exact path="/genre" component={GenreBooks} />
           </Switch>;
         </div>
       </Router>
