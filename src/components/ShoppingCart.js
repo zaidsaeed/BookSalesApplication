@@ -22,7 +22,7 @@ class ShoppingCart extends Component {
         >
           {shoppingItems}
         </div>
-        <Link to="/checkout">
+        <Link to="/checkout" style={{ marginTop: "30px" }}>
           <button type="button" class="btn btn-success">
             Proceed To Checkout
           </button>
