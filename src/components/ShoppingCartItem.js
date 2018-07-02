@@ -7,7 +7,8 @@ export default class ShoppingCartItem extends Component {
       <div
         style={{
           height: "120px",
-          display: "flex"
+          display: "flex",
+          marginBottom: "250px"
         }}
       >
         <div
