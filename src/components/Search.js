@@ -49,7 +49,12 @@ export default class Search extends Component {
           onChange={this.handleInputChange}
           style={{ width: "350px" }}
         />
-        <Suggestions results={this.state.results} />
+        <Suggestions
+          results={this.state.results}
+          clearSuggestions={() => {
+            this.setState({ results: [] });
+          }}
+        />
       </form>
     );
   }

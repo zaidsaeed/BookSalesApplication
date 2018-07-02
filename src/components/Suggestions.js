@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 export default class Suggestions extends Component {
   render() {
     const options = this.props.results.map(r => (
-      <a class="dropdown-item">{r.bookTitle}</a>
+      <a
+        class="dropdown-item"
+        onClick={() => {
+          this.props.clearSuggestions();
+        }}
+      >
+        {r.bookTitle}
+      </a>
     ));
     return options.length === 0 ? (
       <div />
