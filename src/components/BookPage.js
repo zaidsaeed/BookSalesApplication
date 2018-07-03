@@ -44,6 +44,8 @@ class BookPage extends Component {
         <h2> ${book.price} </h2>
         <br />
         <p> {book.description}</p>
+
+        
       </div>
     );
   }
