@@ -48,6 +48,7 @@ class Book extends Component {
             style={{ margin: "0 15px 15px 15px" }}
             onClick={() => {
               this.props.cartActions.removeFromCart(book.id);
+              this.props.cartActions.decreaseTotalCount(book.price);
             }}
           >
             Remove From Shopping Cart
@@ -59,6 +60,7 @@ class Book extends Component {
             style={{ margin: "0 15px 15px 15px" }}
             onClick={() => {
               this.props.cartActions.addToCart(book);
+              this.props.cartActions.increaseTotalCount(book.price);
             }}
           >
             Add to Shopping Cart

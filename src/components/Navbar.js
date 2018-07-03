@@ -51,7 +51,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link to="/shoppingcart">
                 <i
-                  style={{ marginRight: "10px", hover: "pointer" }}
+                  style={{ marginRight: "75px", hover: "pointer" }}
                   className="nav-link material-icons"
                 >
                   shopping_cart

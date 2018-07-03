@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 
-export default class ShoppingCartItem extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as cartActions from "../actions/cartActions";
+
+class ShoppingCartItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quantityValue: 1
+    };
+  }
   render() {
     const { book } = this.props;
     return (
@@ -18,7 +28,13 @@ export default class ShoppingCartItem extends Component {
           }}
         >
           {/* X button */}
-          <button style={{ backgroundColor: "Transparent", border: "none" }}>
+          <button
+            style={{ backgroundColor: "Transparent", border: "none" }}
+            onClick={() => {
+              this.props.cartActions.removeFromCart(book.id);
+              this.props.cartActions.decreaseTotalCount(book.price);
+            }}
+          >
             <img
               src="https://nukkadshops.com/images/close-icon.png"
               height="40px"
@@ -71,6 +87,12 @@ export default class ShoppingCartItem extends Component {
                 backgroundColor: "Transparent",
                 border: "none"
               }}
+              onClick={() => {
+                this.setState({
+                  quantityValue: this.state.quantityValue + 1
+                });
+                this.props.cartActions.increaseTotalCount(book.price);
+              }}
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8IIqYo3FNAP7aXDasVWKhIigLZb1988anXz86QVUE75qi8YjM"
@@ -82,7 +104,7 @@ export default class ShoppingCartItem extends Component {
             <input
               type="text"
               name="name"
-              value="1"
+              value={this.state.quantityValue}
               style={{
                 margin: "10px 0 10px 0",
                 textAlign: "center",
@@ -98,6 +120,14 @@ export default class ShoppingCartItem extends Component {
                 display: "flex",
                 backgroundColor: "Transparent",
                 border: "none"
+              }}
+              onClick={() => {
+                if (this.state.quantityValue !== 0) {
+                  this.setState({
+                    quantityValue: this.state.quantityValue - 1
+                  });
+                  this.props.cartActions.decreaseTotalCount(book.price);
+                }
               }}
             >
               <img
@@ -129,3 +159,20 @@ export default class ShoppingCartItem extends Component {
     );
   }
 }
+
+function mapStateToProps(state, props) {
+  return {
+    items: state.items
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    cartActions: bindActionCreators(cartActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShoppingCartItem);
