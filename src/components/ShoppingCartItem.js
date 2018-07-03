@@ -87,7 +87,9 @@ class ShoppingCartItem extends Component {
                 border: "none"
               }}
               onClick={() => {
-                this.setState({ quantityValue: this.state.quantityValue + 1 });
+                this.setState({
+                  quantityValue: this.state.quantityValue + 1
+                });
               }}
             >
               <img
@@ -118,7 +120,11 @@ class ShoppingCartItem extends Component {
                 border: "none"
               }}
               onClick={() => {
-                this.setState({ quantityValue: this.state.quantityValue - 1 });
+                if (this.state.quantityValue !== 0) {
+                  this.setState({
+                    quantityValue: this.state.quantityValue - 1
+                  });
+                }
               }}
             >
               <img
