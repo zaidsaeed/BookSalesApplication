@@ -5,7 +5,7 @@
 <img src="./checkoutpage.png"/>
 
 <h1>Home Page View</h1>
-<img src="./homepageview.png"/>
+<img src="./homepage.png"/>
 
 <h1>Search View</h1>
 <img src="./search.png"/>
