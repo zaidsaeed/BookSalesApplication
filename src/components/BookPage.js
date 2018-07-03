@@ -4,10 +4,17 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as cartActions from "../actions/cartActions";
 import PropTypes from "prop-types";
+import Book from "./Book.js";
+import protos from "./ProtosArray";
 
 class BookPage extends Component {
   render() {
+
+    let bookcards = protos.map((book, index) => {
+      return <Book book={book} />;
+    });
     let inCart;
+    let suggestions = bookcards.slice(0, 5);
     const { book } = this.props.location.state;
     const { items } = this.props;
     const filteredItems = items.filter(item => {
@@ -60,7 +67,29 @@ class BookPage extends Component {
           >
             Add to Cart
           </button1>
+
+          
         )}
+        <div 
+        style={{
+          marginTop: "300px",
+          marginLeft: "50px"
+        }}>
+        <h2>You might also like these: </h2>
+        </div>
+       <div
+       
+       style ={{display: "grid",
+       gridTemplateColumns: "auto auto auto auto",
+       gridGap: "10px",
+       gridAutoFlow: "row",
+       padding: "0px 25px 15px 25px",
+       marginTop: "50px"}}>
+          {suggestions}
+
+       </div>
+
+        
       </div>
     );
   }
