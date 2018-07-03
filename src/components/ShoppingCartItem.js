@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
-export default class ShoppingCartItem extends Component {
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as cartActions from "../actions/cartActions";
+
+class ShoppingCartItem extends Component {
   render() {
     const { book } = this.props;
     return (
@@ -18,7 +22,12 @@ export default class ShoppingCartItem extends Component {
           }}
         >
           {/* X button */}
-          <button style={{ backgroundColor: "Transparent", border: "none" }}>
+          <button
+            style={{ backgroundColor: "Transparent", border: "none" }}
+            onClick={() => {
+              this.props.cartActions.removeFromCart(book.id);
+            }}
+          >
             <img
               src="https://nukkadshops.com/images/close-icon.png"
               height="40px"
@@ -129,3 +138,20 @@ export default class ShoppingCartItem extends Component {
     );
   }
 }
+
+function mapStateToProps(state, props) {
+  return {
+    items: state.items
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    cartActions: bindActionCreators(cartActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShoppingCartItem);
