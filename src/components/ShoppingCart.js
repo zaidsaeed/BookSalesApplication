@@ -13,7 +13,6 @@ class ShoppingCart extends Component {
     });
     return (
       <div>
-        {this.props.price}
         <div
           style={{
             margin: "25px 0 25px 0",
@@ -22,6 +21,12 @@ class ShoppingCart extends Component {
           }}
         >
           {shoppingItems}
+        </div>
+        <div
+          className="alert alert-dismissible alert-light"
+          style={{ margin: "50px 250px" }}
+        >
+          <strong>The total price is: ${this.props.price}</strong>
         </div>
         <Link to="/checkout" style={{ marginTop: "30px" }}>
           <button type="button" class="btn btn-success">

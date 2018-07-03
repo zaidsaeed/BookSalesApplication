@@ -32,6 +32,7 @@ class ShoppingCartItem extends Component {
             style={{ backgroundColor: "Transparent", border: "none" }}
             onClick={() => {
               this.props.cartActions.removeFromCart(book.id);
+              this.props.cartActions.decreaseTotalCount(book.price);
             }}
           >
             <img
