@@ -8,16 +8,22 @@ export default class Books extends Component {
       return <SuggestionCard book={result} />;
     });
     return (
+     <div>
+       <h1 style ={{ marginTop: "30px", marginLeft: "30px"}}> Search Results: </h1>
+       <br></br>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 15rem [col-start])",
-          margin: "auto"
+          gridTemplateColumns: "auto auto auto auto auto",
+          marginLeft: "40px",
+          marginRight: "40px",
         }}
       >
-        <h1>Search Results: </h1>
+        
         {searchResultCards}
-      </div>
+      </div></div>
     );
   }
 }
+
+//gridTemplateColumns: "repeat(5, 15rem [col-start])",
