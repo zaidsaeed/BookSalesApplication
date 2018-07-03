@@ -13,6 +13,7 @@ class ShoppingCart extends Component {
     });
     return (
       <div>
+        {this.props.price}
         <div
           style={{
             margin: "25px 0 25px 0",
@@ -32,9 +33,10 @@ class ShoppingCart extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
-    items: state.items
+    items: state.items,
+    price: state.price
   };
 }
 

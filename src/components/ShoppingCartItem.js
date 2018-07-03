@@ -90,6 +90,7 @@ class ShoppingCartItem extends Component {
                 this.setState({
                   quantityValue: this.state.quantityValue + 1
                 });
+                this.props.cartActions.increaseTotalCount(book.price);
               }}
             >
               <img
@@ -124,6 +125,7 @@ class ShoppingCartItem extends Component {
                   this.setState({
                     quantityValue: this.state.quantityValue - 1
                   });
+                  this.props.cartActions.decreaseTotalCount(book.price);
                 }
               }}
             >
