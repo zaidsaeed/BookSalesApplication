@@ -27,8 +27,9 @@ export default class Suggestions extends Component {
           xPlacement="bottom-start"
           style={{
             position: "absolute",
-            right: "5%",
-            left: "72%"
+            right: "9%",
+            left: "57%",
+            marginRight: "25px"
           }}
         >
           {options}
