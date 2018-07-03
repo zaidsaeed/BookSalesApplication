@@ -5,6 +5,12 @@ import { bindActionCreators } from "redux";
 import * as cartActions from "../actions/cartActions";
 
 class ShoppingCartItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quantityValue: 1
+    };
+  }
   render() {
     const { book } = this.props;
     return (
@@ -80,6 +86,9 @@ class ShoppingCartItem extends Component {
                 backgroundColor: "Transparent",
                 border: "none"
               }}
+              onClick={() => {
+                this.setState({ quantityValue: this.state.quantityValue + 1 });
+              }}
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8IIqYo3FNAP7aXDasVWKhIigLZb1988anXz86QVUE75qi8YjM"
@@ -91,7 +100,7 @@ class ShoppingCartItem extends Component {
             <input
               type="text"
               name="name"
-              value="1"
+              value={this.state.quantityValue}
               style={{
                 margin: "10px 0 10px 0",
                 textAlign: "center",
@@ -107,6 +116,9 @@ class ShoppingCartItem extends Component {
                 display: "flex",
                 backgroundColor: "Transparent",
                 border: "none"
+              }}
+              onClick={() => {
+                this.setState({ quantityValue: this.state.quantityValue - 1 });
               }}
             >
               <img
