@@ -19,7 +19,12 @@ class App extends Component {
           <Navbar />
           {/* Routes */}
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/"}
+              component={Landing}
+            />
+            <Route exact path="/BookSalesApplication" component={Landing} />
             <Route exact path="/index" component={Landing} />
             <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/checkout" component={Checkout} />

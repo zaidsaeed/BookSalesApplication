@@ -5,6 +5,7 @@ import { Navbar } from "./Navbar";
 return (
   <div>
     <Navbar />
+    <h1> HELOOOOOO!!! </h1>
     <Landing />
   </div>
 );
