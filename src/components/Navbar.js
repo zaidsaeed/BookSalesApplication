@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <Link to={/process.env.PUBLIC_URL}>
+        <Link to={process.env.PUBLIC_URL}>
           <a
             className="navbar-brand nav-item"
             style={{ color: "rgba(255,255,255,0.5)" }}
