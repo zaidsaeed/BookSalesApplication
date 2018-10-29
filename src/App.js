@@ -22,7 +22,7 @@ class App extends Component {
             <Route exact path={"/"} component={Landing} />
             <Route exact path="/BookSalesApplication" component={Landing} />
             <Route exact path="/index" component={Landing} />
-            <Route exact path="/" component={ShoppingCart} />
+            <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/books" component={Books} />
             <Route exact path="/book/:id" component={BookPage} />
