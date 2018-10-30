@@ -22,14 +22,17 @@ class App extends Component {
             <Route exact path={"/"} component={Landing} />
             <Route exact path="/BookSalesApplication" component={Landing} />
             <Route exact path="/index" component={Landing} />
-            <Route exact path="/shoppingcart" component={ShoppingCart} />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/shoppingcart"}
+              component={ShoppingCart}
+            />
             <Route exact path="/checkout" component={Checkout} />
             <Route exact path="/books" component={Books} />
             <Route exact path="/book/:id" component={BookPage} />
             <Route exact path="/search" component={Books} />
             <Route exact path="/genre" component={GenreBooks} />
           </Switch>
-          ;
         </div>
       </Router>
     );
