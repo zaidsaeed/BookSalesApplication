@@ -20,6 +20,7 @@ class App extends Component {
           {/* Routes */}
           <Switch>
             <Route exact path={"/"} component={Landing} />
+            <Route exact path={"/shoppingcart"} component={ShoppingCart} />
             <Route exact path="/BookSalesApplication" component={Landing} />
             <Route exact path="/index" component={Landing} />
             <Route

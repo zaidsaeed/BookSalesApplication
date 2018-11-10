@@ -15,7 +15,7 @@ class ShoppingCart extends Component {
     let toReturn;
     items.length !== 0
       ? (toReturn = (
-          <div>
+          <div className=".col-sm-12 .col-md-12	.col-lg-12">
             <div
               style={{
                 margin: "25px 0 25px 0",
