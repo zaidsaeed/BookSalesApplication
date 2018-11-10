@@ -1,10 +1,10 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  width: fit-content;
+}
 
 img {
-
-    float: left;
+  float: left;
 }
