@@ -54,31 +54,31 @@ class Navbar extends Component {
               </Link>
             </li>
           </ul>
-        </div>
 
-        <div
-          className="form-inline my-2 my-lg-0"
-          id="navbarColor01"
-          style={{
-            display: "flex",
-            alignContent: "center",
-            justifyItems: "center",
-            flexFlow: "row"
-          }}
-        >
-          <Search />
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/shoppingcart">
-                <i
-                  style={{ marginRight: "75px", hover: "pointer" }}
-                  className="nav-link material-icons"
-                >
-                  shopping_cart
-                </i>
-              </Link>
-            </li>
-          </ul>
+          <div
+            className="form-inline my-2 my-lg-0"
+            id="navbarColor01"
+            style={{
+              display: "flex",
+              alignContent: "center",
+              justifyItems: "center",
+              flexFlow: "row"
+            }}
+          >
+            <Search />
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link to="/shoppingcart">
+                  <i
+                    style={{ marginRight: "75px", hover: "pointer" }}
+                    className="nav-link material-icons"
+                  >
+                    shopping_cart
+                  </i>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     );
