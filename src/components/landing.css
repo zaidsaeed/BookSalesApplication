@@ -1,0 +1,47 @@
+@media screen and (min-width: 1171px) {
+  .newReleases,
+  .bestSellers,
+  .ourRecommendations {
+    display: grid;
+    grid-template-columns: repeat(5, 20rem [col-start]);
+    grid-gap: 10px;
+    grid-auto-flow: row;
+    padding: 0px 25px 15px 25px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .newReleases,
+  .bestSellers,
+  .ourRecommendations {
+    display: grid;
+    grid-template-columns: repeat(5, 8.5rem [col-start]);
+    grid-gap: 10px;
+    grid-auto-flow: row;
+    padding: 0px 25px 15px 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .newReleases,
+  .bestSellers,
+  .ourRecommendations {
+    display: grid;
+    grid-template-columns: repeat(5, 6rem [col-start]);
+    grid-gap: 10px;
+    grid-auto-flow: row;
+    padding: 0px 25px 15px 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .newReleases,
+  .bestSellers,
+  .ourRecommendations {
+    display: grid;
+    grid-template-columns: repeat(5, 5rem [col-start]);
+    grid-gap: 10px;
+    grid-auto-flow: row;
+    padding: 0px 25px 15px 25px;
+  }
+}

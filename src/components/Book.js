@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as cartActions from "../actions/cartActions";
 import { Link } from "react-router-dom";
+import "./book.css";
 
 class Book extends Component {
   render() {
@@ -18,13 +19,7 @@ class Book extends Component {
     });
     inCart = filteredItems.length != 0;
     return (
-      <div
-        className="card text-white bg-success mb-3"
-        style={{
-          maxWidth: "20rem",
-          marginTop: "20px"
-        }}
-      >
+      <div className="card text-white bg-success mb-3">
         <Link
           to={{ pathname: `/book/${book.id}`, state: { book } }}
           className="card text-white bg-success mb-3"
@@ -32,9 +27,8 @@ class Book extends Component {
         >
           <div className="card-header">{book.bookTitle}</div>
           <img
+            className="landingImage"
             src={book.imageURL}
-            width="300"
-            height="400"
             style={{ margin: "10px" }}
           />
           <div className="card-body">
@@ -45,25 +39,28 @@ class Book extends Component {
           <button
             type="button"
             class="btn btn-warning"
-            style={{ margin: "0 15px 15px 15px" }}
+            style={{ margin: "5px 15px 15px 15px" }}
             onClick={() => {
               this.props.cartActions.removeFromCart(book.id);
               this.props.cartActions.decreaseTotalCount(book.price);
             }}
           >
-            Remove From Shopping Cart
+            Remove From <br />
+            Cart
           </button>
         ) : (
           <button
             type="button"
             class="btn btn-warning"
-            style={{ margin: "0 15px 15px 15px" }}
+            style={{ margin: "5px 15px 15px 15px" }}
             onClick={() => {
               this.props.cartActions.addToCart(book);
               this.props.cartActions.increaseTotalCount(book.price);
             }}
           >
-            Add to Shopping Cart
+            Add to
+            <br />
+            Cart
           </button>
         )}
       </div>
