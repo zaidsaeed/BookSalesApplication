@@ -20,7 +20,7 @@ class Navbar extends Component {
           data-toggle="collapse"
           data-target="#navbarColor01"
           aria-controls="navbarColor01"
-          aria-expanded="true"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon" />
@@ -56,7 +56,16 @@ class Navbar extends Component {
           </ul>
         </div>
 
-        <div className="form-inline my-2 my-lg-0" id="navbarColor01">
+        <div
+          className="form-inline my-2 my-lg-0"
+          id="navbarColor01"
+          style={{
+            display: "flex",
+            alignContent: "center",
+            justifyItems: "center",
+            flexFlow: "row"
+          }}
+        >
           <Search />
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
