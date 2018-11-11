@@ -1,14 +1,23 @@
 @media screen and (min-width: 1171px) {
-  input.searchBar {
-    width: 500px;
+  input.searchBar[type="text"] {
+    width: 700px;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  input.searchBar[type="text"] {
+    width: -webkit-fill-available;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  input.searchBar[type="text"] {
+    width: -webkit-fill-available;
+  }
 }
 
 @media screen and (max-width: 500px) {
+  input.searchBar[type="text"] {
+    width: -webkit-fill-available;
+  }
 }

@@ -15,22 +15,23 @@ class Navbar extends Component {
           </a>
         </Link>
 
-        <div
-          className="collapse navbar-collapse"
-          id="navbarColor01"
-          style={{
-            display: "flex",
-            alignContent: "center",
-            justifyItems: "center",
-            flexFlow: "row"
-          }}
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
+          <span className="navbar-toggler-icon" />
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarColor01">
           <ul
             className="navbar-nav mr-auto"
             style={{
-              display: "flex",
-              flexDirection: "row",
-              width: "matchContent"
+              display: "flex"
             }}
           >
             <li className="nav-item" style={{ marginRight: "5px" }}>
@@ -59,10 +60,10 @@ class Navbar extends Component {
               </Link>
             </li>
             <Search />
-            <li className="nav-item">
+            <li className="nav-item" id="shoppingCart">
               <Link to="/shoppingcart">
                 <i
-                  style={{ marginRight: "75px", hover: "pointer" }}
+                  style={{ hover: "pointer" }}
                   className="nav-link material-icons"
                 >
                   shopping_cart
@@ -71,18 +72,6 @@ class Navbar extends Component {
             </li>
           </ul>
         </div>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarColor01"
-          aria-controls="navbarColor01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
       </nav>
     );
   }

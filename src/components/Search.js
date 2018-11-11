@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import protos from "./ProtosArray";
 import Suggestions from "./Suggestions";
+import "./search.css";
 
 export default class Search extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ export default class Search extends Component {
           placeholder="Search based on genre, category, author.."
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
-          style={{ width: "500px", marginRight: "25px" }}
+          style={{ marginRight: "25px" }}
         />
         <Suggestions
           results={this.state.results}
