@@ -15,43 +15,8 @@ class Navbar extends Component {
           </a>
         </Link>
 
-        <ul
-          className="navbar-nav mr-auto"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "matchContent"
-          }}
-        >
-          <li className="nav-item" style={{ marginRight: "5px" }}>
-            <Link to="/genre">
-              <a className="nav-link">Politics</a>
-            </Link>
-          </li>
-          <li className="nav-item" style={{ marginRight: "5px" }}>
-            <Link to="/genre">
-              <a className="nav-link">History</a>
-            </Link>
-          </li>
-          <li className="nav-item" style={{ marginRight: "5px" }}>
-            <Link to="/genre">
-              <a className="nav-link">Fiction</a>
-            </Link>
-          </li>
-          <li className="nav-item" style={{ marginRight: "5px" }}>
-            <Link to="/genre">
-              <a className="nav-link">Health</a>
-            </Link>
-          </li>
-          <li className="nav-item" style={{ marginRight: "5px" }}>
-            <Link to="/genre">
-              <a className="nav-link">Science</a>
-            </Link>
-          </li>
-        </ul>
-
         <div
-          className="form-inline my-2 my-lg-0"
+          className="collapse navbar-collapse"
           id="navbarColor01"
           style={{
             display: "flex",
@@ -60,8 +25,40 @@ class Navbar extends Component {
             flexFlow: "row"
           }}
         >
-          <Search />
-          <ul className="navbar-nav mr-auto">
+          <ul
+            className="navbar-nav mr-auto"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "matchContent"
+            }}
+          >
+            <li className="nav-item" style={{ marginRight: "5px" }}>
+              <Link to="/genre">
+                <a className="nav-link">Politics</a>
+              </Link>
+            </li>
+            <li className="nav-item" style={{ marginRight: "5px" }}>
+              <Link to="/genre">
+                <a className="nav-link">History</a>
+              </Link>
+            </li>
+            <li className="nav-item" style={{ marginRight: "5px" }}>
+              <Link to="/genre">
+                <a className="nav-link">Fiction</a>
+              </Link>
+            </li>
+            <li className="nav-item" style={{ marginRight: "5px" }}>
+              <Link to="/genre">
+                <a className="nav-link">Health</a>
+              </Link>
+            </li>
+            <li className="nav-item" style={{ marginRight: "5px" }}>
+              <Link to="/genre">
+                <a className="nav-link">Science</a>
+              </Link>
+            </li>
+            <Search />
             <li className="nav-item">
               <Link to="/shoppingcart">
                 <i
@@ -74,6 +71,18 @@ class Navbar extends Component {
             </li>
           </ul>
         </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
       </nav>
     );
   }

@@ -43,7 +43,7 @@ export default class Search extends Component {
       <form class="form-inline my-2 my-lg-0">
         <input
           type="text"
-          className="form-control mr-sm-2"
+          className="searchBar form-control mr-sm-2"
           placeholder="Search based on genre, category, author.."
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
